@@ -1,0 +1,11 @@
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\bin\Debug\netcoreapp2.0\DemoSneakerStore.deps.json
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\bin\Debug\netcoreapp2.0\DemoSneakerStore.runtimeconfig.json
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\bin\Debug\netcoreapp2.0\DemoSneakerStore.runtimeconfig.dev.json
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\bin\Debug\netcoreapp2.0\DemoSneakerStore.dll
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\bin\Debug\netcoreapp2.0\DemoSneakerStore.pdb
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.csproj.CoreCompileInputs.cache
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.AssemblyInfoInputs.cache
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.AssemblyInfo.cs
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.dll
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.pdb
+D:\Trung Kiên\CodeWeb\DemoSneakerStore\DemoSneakerStore\obj\Debug\netcoreapp2.0\DemoSneakerStore.csprojAssemblyReference.cache

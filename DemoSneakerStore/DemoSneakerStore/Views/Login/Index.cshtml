@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "Login_Layout";
+}
+@model DemoSneakerStore.Models.Account
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <form class="login100-form validate-form flex-sb flex-w" id="frmLogin" asp-action="Index" method="post">
+                <span class="login100-form-title p-b-51">
+                    Login
+                </span>
+
+                <div class="col-md-12">
+                    @if (TempData["Message"] != null)
+                    {  
+                        <p style="text-align: center" class="alert alert-danger">@TempData["Message"]</p>  
+                    }  
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+                    <input class="input100" type="text" asp-for="UserName" name="username" placeholder="Username"
+                           autocomplete="off" id="txtUserNam" autofocus="autofocus" required>
+                    <span class="focus-input100"></span>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" asp-for="Password" name="password" placeholder="Password" 
+                           id="txtpassword" required>
+                    <span class="focus-input100"></span>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+            <div class="contact100-form-checkbox">
+                <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                <label class="label-checkbox100" for="ckb1">Remember me</label>
+            </div>
+        </div>
+                <a asp-action="SignUp" asp-controller="Login" style="text-align: center; font-size: 14px; color: white; margin-left: 50%; transform: translateX(-50%)"
+                   >Sign Up</a>
+                <div class="container-login100-form-btn m-t-17">
+                    <input class="login100-form-btn" type="submit" value="LOGIN">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

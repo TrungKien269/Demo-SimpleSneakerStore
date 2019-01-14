@@ -1,0 +1,195 @@
+body
+{
+    background: url('/images/BG2.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    width: 56%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.145);
+}
+
+.left-child-div
+{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    float: left;
+}
+
+.left-child-div p
+{
+    font-weight: lighter;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 24px;
+    color: rgb(225, 225, 225, 0.9);
+}
+
+#logo{
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 35%;
+}
+
+.right-child-div
+{
+    width: 50%;
+    height: 100%;
+    float: right;
+    background: rgba(252, 255, 252, 0.233);
+}
+
+.right-child-div #Header
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    width: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 500;
+    color: darkred;
+    margin-bottom: 0;
+}
+
+.right-child-div img
+{
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: 100px;
+    border-radius: 50%;
+    filter: blur(1);
+}
+
+.Tupple
+{
+    margin-bottom: 20px;
+}
+
+.Tupple p
+{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 17px;
+    margin-left: 10px;
+    width: 24%;
+    transform: translateY(6px);
+    color: darkblue;
+}
+
+.Tupple input
+{
+    width: 68%;
+    border: none;
+    font-size: 18px;
+    height: auto;
+    background-color: inherit;
+    outline: none;
+    border-bottom: 1px solid white;
+    display: inline-block;
+    color: darkcyan;
+}
+
+.Tupple input[type = "text"]:active
+{
+    outline: none;
+}
+
+#btnSignUp
+{
+    width: 93%;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    height: 40px;
+    border: none;
+    background-color: rgba(178, 223, 217, 0.24);
+    color: whitesmoke;
+}
+
+#btnSignUp:hover
+{
+    background-color: rgba(178, 223, 217, 0.527);
+}
+
+#logo2{
+    display: none;
+}
+
+@media all and (max-width: 1110px)
+{
+    .right-child-div #Header
+    {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 35px;
+        width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-weight: 500;
+        color: darkred;
+        margin-bottom: 0;
+    }
+
+    .Tupple p
+    {
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 20%;
+        transform: translateY(6px);
+        color: darkblue;
+    }
+}
+
+@media all and (max-width: 700px)
+{
+    .container{
+        width: 80%;
+        height: 510px;
+    }
+
+    .right-child-div{
+        width: 100%;
+    }
+
+    .right-child-div #Header
+    {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-weight: 500;
+        color: darkred;
+        margin-bottom: 0;
+    }
+
+    .left-child-div{
+        display: none;
+    }
+
+    #logo2{
+        width: 70%;
+        height: 80px;
+        margin-left: 55px;
+        transform: translateY(-90px);
+        display: block;
+    }
+}

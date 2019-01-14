@@ -1,0 +1,151 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "Dashboard_Layout";
+}
+@model IEnumerable<DemoSneakerStore.Models.Shoes>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="black" style="background-image: url(images/sidebar-5.jpg)">
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a asp-action="Index" asp-controller="Dashboard" class="simple-text">Sneaker World</a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a asp-action="Account" asp-controller="Dashboard">
+                        <i class="pe-7s-id"></i>
+                        <p>Account List</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="CreateAccount" asp-controller="Account">
+                        <i class="pe-7s-user"></i>
+                        <p>Create Account</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="CreateShoes" asp-controller="ShoesManage">
+                        <i class="pe-7s-upload"></i>
+                        <p>Create Shoes</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="Index" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Import Bill List</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="InsertImportBill" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Insert Import Bill</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="ExportBill" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Export Bill List</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" asp-action="Index" asp-controller="Dashboard">Shop</a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @if (ViewBag.Account != null)
+                            {
+                                <a><p>@ViewBag.Account</p></a>
+                            }
+                            else
+                            {
+                                <a asp-action="Index" asp-controller="Login"><p>Login</p></a>
+                            }
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <p>Menu<b class="caret"></b></p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Maker</a></li>
+                                <li><a href="#">Category</a></li>
+                                <li><a href="#">Origin</a></li>
+                                <li><a href="#">Color</a></li>
+                                <li><a href="#">Size</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (ViewBag.Account != null)
+                            {
+                                <a asp-action="Logout" asp-controller="Login"><p>Log out</p></a>
+                            }
+                        </li>
+                        <li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content" style="background-color:#e7e7e7">
+            <div class="container-fluid" style="padding-left: 0px;padding-right: 0px">
+                @foreach (var item in Model)
+                {
+                    <div class="example-1 card" style="width: 300px;height: 300px; display: contents">
+                        <div class="wrapper" style="height: 250px;width: 300px">
+                            <img src="images/shoes/@Html.DisplayFor(modelItem => item.Image[0].Link)" alt="img not available" style="width: 80%"/>
+                            <div class="date">
+                                <span class="day"><script>12</script></span>
+                                <span class="month">NEW</span>
+                                <span class="year">2019</span>
+                            </div>
+                            <div class="data">
+                                <div class="content" style="height: 120px;">
+                                    <span class="title" style="font-size: 20px">$@Html.DisplayFor(modelItem => item.Price[0].ShoesPrice)</span>
+                                    <h4 class="title">
+                                        <a asp-controller="Dashboard" asp-action="ShoesDetail" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                                    </h4>
+                                    <label for="show-menu" class="menu-button"><span></span></label>
+                                </div>
+                                <input type="checkbox" id="show-menu" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+
+                <p class="copyright pull-right">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> <a>SneakerFloat</a>, made with love for a better service
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+
+<script src="js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>

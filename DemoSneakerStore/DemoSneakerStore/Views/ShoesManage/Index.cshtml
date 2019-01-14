@@ -1,0 +1,239 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "ShoesMana_Layout";
+}
+@model DemoSneakerStore.Models.Shoes
+
+<div class="wrapper">
+    <div class="sidebar" data-color="black" style="background-image: url(/images/sidebar-5.jpg)">
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a class="simple-text">
+                    Sneaker World
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a asp-action="Account" asp-controller="Dashboard">
+                        <i class="pe-7s-id"></i>
+                        <p>Account List</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="CreateAccount" asp-controller="Account">
+                        <i class="pe-7s-user"></i>
+                        <p>Create Account</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="CreateShoes" asp-controller="ShoesManage">
+                        <i class="pe-7s-upload"></i>
+                        <p>Create Shoes</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="Index" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Import Bill List</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="InsertImportBill" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Insert Import Bill</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a asp-action="ExportBill" asp-controller="Bill">
+                        <i class="pe-7s-user"></i>
+                        <p>Export Bill List</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main-panel" style="background-color: white">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" asp-action="Index" asp-controller="Dashboard">Shop</a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @if (ViewBag.Account != null)
+                            {
+                                <a><p>@ViewBag.Account</p></a>
+                            }
+                            else
+                            {
+                                <a asp-action="Index" asp-controller="Login"><p>Login</p></a>
+                            }
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <p>Menu<b class="caret"></b></p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Maker</a></li>
+                                <li><a href="#">Category</a></li>
+                                <li><a href="#">Origin</a></li>
+                                <li><a href="#">Color</a></li>
+                                <li><a href="#">Size</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (ViewBag.Account != null)
+                            {
+                                <a asp-action="Logout" asp-controller="Login"><p>Log out</p></a>
+                            }
+                        </li>
+                        <li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex full-width border-box relative column align-center justify-start hide-scroll" style="background-color: white">
+            <div class="flex full-width border-box relative column align-center justify-center hide-scroll">
+                <div class="flex full-width border-box relative align-center justify-center hide-scroll goat-width" style="height: calc(100vh - 180px); min-height: 500px; border: 1px solid black; max-height: 700px;">
+                    <div class="flex full-width border-box relative hide-scroll full-height" style="width: 50%; border-right: 1px solid black;">
+                        <div class="full-width border-box relative goat-scroll">
+                            <div class="flex full-width border-box relative fixed-container hide-scroll lightbox-container hidden has-min-height" style="z-index: 9000;">
+                                <div class="flex full-width border-box relative column align-center justify-center hide-scroll" style="width: 90px; z-index: 1;">
+                                    <p class="plain-medium-10-caps" style="margin-bottom: 3px;"> 1 </p>
+                                    <div style="height: 1px; border-bottom: 1px solid black; width: 10px;"></div><p class="plain-medium-10-caps" style="margin-top: 3px;">7</p>
+                                </div>
+                                <div class="flex full-width border-box absolute-container hide-scroll lightbox-overlay"></div>
+                                <div class="flex full-width border-box absolute-container hide-scroll lightbox">
+                                    <div class="flex full-width border-box relative hide-scroll full-height">
+                                        <svg width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="pointer lightbox-x" data-dismiss-on-click="true" style="position: absolute; top: -1px; right: -1px; z-index: 1; stroke: transparent; vertical-align: middle;">
+                                            <path d="M29,1V29H1V1H29m1-1H0V30H30V0Z"></path>
+                                            <line x1="18.08" y1="11.92" x2="11.92" y2="18.08" fill="none" stroke="black" stroke-miterlimit="10" stroke-width="1" style="stroke: black;"></line>
+                                            <line x1="18.08" y1="18.08" x2="11.92" y2="11.92" fill="none" stroke="black" stroke-miterlimit="10" stroke-width="1" style="stroke: black;"></line>
+                                        </svg>
+                                        <svg width="35px" height="35px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="pointer lightbox-caret" style="transform: rotate(-180deg) translateY(50%); z-index: 1; position: absolute; top: 50%; left: -1px; opacity: 0.3;">
+                                            <path d="M29,1V29H1V1H29m1-1H0V30H30V0Z"></path>
+                                            <polyline points="14.02 11.79 17.23 15 14.02 18.21" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"></polyline>
+                                        </svg>
+                                        <svg width="35px" height="35px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="pointer lightbox-caret" style="transform: rotate(-360deg) translateY(-50%); z-index: 1; position: absolute; top: 50%; right: -1px;">
+                                            <path d="M29,1V29H1V1H29m1-1H0V30H30V0Z"></path>
+                                            <polyline points="14.02 11.79 17.23 15 14.02 18.21" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex full-width border-box relative align-center justify-center hide-scroll full-height">
+                                <img alt="shoes img" class="hardware-accelerate align-self-center align-center-justify-center pointer" src="/images/shoes/@Html.DisplayFor(itemModel => Model.Image[0].Link)"
+                                     style="max-width: 100%; overflow: hidden; max-height: 100%; margin-top: -60%">
+                            </div>
+                        </div>
+                        <div class="flex full-width border-box absolute-container align-end justify-center hide-scroll" style="z-index: 2; pointer-events: none;">
+                            <div class="flex full-width border-box relative align-center justify-center hide-scroll" style="padding: 30px;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p style="font-weight: 100; font-size: 21px">
+                                                Manufacture
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="ProductDisplayDesktopProductTemplateTitle__ProductNameText-jgh66d-1 hVNHDt">
+                                                @Html.DisplayFor(modelItem => Model.Maker.Name)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p style="font-weight: 100; font-size: 21px">
+                                                Category
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="ProductDisplayDesktopProductTemplateTitle__ProductNameText-jgh66d-1 hVNHDt">
+                                                @Html.DisplayFor(modelItem => Model.Cate.Name)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p style="font-weight: 100; font-size: 21px">
+                                                Designer
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="ProductDisplayDesktopProductTemplateTitle__ProductNameText-jgh66d-1 hVNHDt">
+                                                @Html.DisplayFor(modelItem => Model.Designer)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p style="font-weight: 100; font-size: 21px">
+                                                Release Date
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="ProductDisplayDesktopProductTemplateTitle__ProductNameText-jgh66d-1 hVNHDt">
+                                                @Html.DisplayFor(modelItem => Model.ReleaseDate)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex full-width border-box relative align-center justify-center hide-scroll full-height" style="width: 50%;">
+                        <div class="flex full-width border-box relative column hide-scroll full-height">
+                            <div class="flex full-width border-box relative column align-center justify-center hide-scroll grow" style="position: relative;">
+                                <div>
+                                    <h1 class="ProductDisplayDesktopProductTemplateTitle__ProductNameText-jgh66d-1 hVNHDt">
+                                        @Html.DisplayFor(modelItem => Model.Name)
+                                    </h1>
+                                    <p class="ProductDisplayDesktopProductTemplateTitle__SKUText-jgh66d-2 gFBRQe" style="text-align: center; font-size: 17px">
+                                        @Html.DisplayFor(modelItem => Model.Country.CountryName)
+                                    </p>
+                                </div>
+                                <div class="flex full-width border-box relative hide-scroll" style="margin-top: auto;">
+                                    <div class="goat-button-group flex full-width" style="z-index: 1; position: relative; border-bottom: none; border-left: none; border-right: none; min-height: 45px;">
+                                        <button class="goat-button secondary align-center-justify-center undefined" type="button"style="display: block; width: 50%; border-right: 1px solid black;">
+                                            <a asp-controller="ShoesManage" asp-action="EditShoes" asp-route-id="@Model.Id">Edit</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+
+                <p class="copyright pull-right">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> <a>SneakerFloat</a>, made with love for a better service
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/chartist.min.js"></script>
+<script src="/js/bootstrap-notify.js" rel="script" type="text/javascript"></script>
+<script src="/js/light-bootstrap-dashboard.js?v=1.4.0" rel="script" type="text/javascript"></script>

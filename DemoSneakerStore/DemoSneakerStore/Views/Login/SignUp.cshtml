@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "SignUp_Layout";
+}
+
+<div class="container">
+    <div class="left-child-div">
+        <img src="/images/Nike.png" alt="#" id="logo">
+        <p>Best in the world</p>
+        <div style="margin-top: 50px">
+            @if (TempData["Error"] != null)
+            {  
+                <p style="text-align: center; color: brown" class="alert alert-danger">@TempData["Error"]</p>
+            }
+        </div>
+    </div>
+    <div class="right-child-div">
+        <p id="Header">SIGN UP</p>
+        <form asp-action="InsertCustomer" asp-controller="Login" method="post">
+            <div class="Tupple">
+                <p>UserName</p>
+                <input type="text" name="username" required autocomplete="off" autofocus="autofocus">
+            </div>
+            <div class="Tupple">
+                <p>Password</p>
+                <input type="password" name="password" required>
+            </div>
+            <div class="Tupple">
+                <p>Confirm Password</p>
+                <input type="password" name="cfpassword" required>
+            </div>
+            <div class="Tupple">
+                <p>Full Name</p>
+                <input type="text" name="fullname" required autocomplete="off">
+            </div>
+            <div class="Tupple">
+                <p>Phone Number</p>
+                <input type="text" name="phonenumber" required autocomplete="off">
+            </div>
+            <input type="submit" value="Sign Up" id="btnSignUp">
+        </form>
+    </div>
+    <img src="/images/Nike.png" alt="#" id="logo2">
+</div>
